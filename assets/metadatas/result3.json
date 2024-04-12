@@ -1,0 +1,24 @@
+{
+    "image": "https://gateway.pinata.cloud/ipfs/QmYveEhF5ffR61Yd26VuLcu9TWh1LxZW1nBjyhwfA9FJ2K/result3.png",
+    "tokenId" : 3,
+    "name" : "Micio3",
+    
+    "attributes": [
+    
+        {
+            "trait_type" : "backgound",
+            "value" : "grey"
+        },{
+    
+            "trait_type":"pose",
+            "value": "ciao"
+    
+        },
+        {
+            "trait_type":"brand",
+            "value" : "nike"
+        }
+    ]
+    
+    
+    }

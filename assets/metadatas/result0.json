@@ -1,0 +1,25 @@
+
+{
+"image": "https://gateway.pinata.cloud/ipfs/QmYveEhF5ffR61Yd26VuLcu9TWh1LxZW1nBjyhwfA9FJ2K/result0.png",
+"tokenId" : 0,
+"name" : "Micio0",
+
+"attributes": [
+
+    {
+        "trait_type" : "backgound",
+        "value" : "grey"
+    },{
+
+        "trait_type":"pose",
+        "value": "ok"
+
+    },
+    {
+        "trait_type":"brand",
+        "value" : "camel"
+    }
+]
+
+
+}

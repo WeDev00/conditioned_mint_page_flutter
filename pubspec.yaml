@@ -1,0 +1,34 @@
+name: b_mint_page
+description: A new Flutter project.
+
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.0-79.0.dev <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  flutter_web3_provider: ^1.0.6
+  universal_html: ^2.0.8
+  http: ^0.13.5
+  provider: ^6.1.2
+  flutter_ethers: ^1.0.1
+  web3dart: ^2.6.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.2
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/to_deploy/
+
+flutter_icons:
+  image_path: "assets/MpDev_logowithBackground.png"
