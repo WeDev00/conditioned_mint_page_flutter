@@ -44,7 +44,7 @@ class _MinterButtonState extends State<MinterButton> {
         await fetchTransactions(startBloc, address: tryValidAddress);
     //List<Transaction> transactions = await fetchTransactions(startBloc, address: stateManager.walletAddress);
     if (validateTransactions(transactions)) {
-      mint();
+      mint(stateManager);
     } else {
       print("Non hai diritto a mintare");
     }
