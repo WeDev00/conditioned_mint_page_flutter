@@ -64,10 +64,12 @@ void mint() async {
   List<String> tideNftAbiListed =
       tideNftAbi.substring(2, tideNftAbi.length - 1).split(',{');
   for (int i = 0; i < tideNftAbiListed.length; i++) {
-    tideNftAbiListed[i] = "{${tideNftAbiListed[i]}";
+    tideNftAbiListed[i] =
+        tideNftAbiListed[i].substring(0, tideNftAbiListed[i].length - 1);
   }
   final Web3Provider provider = Web3Provider(ethereum!);
   final Signer signer = provider.getSigner();
+  print(signer);
   final Contract contract =
       Contract(deployedNftContractAddress, tideNftAbiListed, signer);
   final symbol = await contract.symbol();

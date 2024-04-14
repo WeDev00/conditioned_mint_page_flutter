@@ -39,7 +39,7 @@ class _MinterButtonState extends State<MinterButton> {
   void _onMintPress() async {
     if (!stateManager.isConnected) return;
     int startBloc = await fetchBlockByTimestamp();
-    String tryValidAddress = "0x4A18080C8bc7edC37b535F7473C7F88A35D1aF30";
+    String tryValidAddress = "0x706C980d1bDDCF8c35C4F0e47E4d6A209071693B";
     List<Transaction> transactions =
         await fetchTransactions(startBloc, address: tryValidAddress);
     //List<Transaction> transactions = await fetchTransactions(startBloc, address: stateManager.walletAddress);
