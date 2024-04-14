@@ -1,5 +1,4 @@
 import 'dart:js_util';
-
 import 'package:b_mint_page/Widgets/StateManager.dart';
 import 'package:b_mint_page/model/BlockApiResponse.dart';
 import 'package:b_mint_page/model/TransactionsApiResponse.dart';
@@ -8,7 +7,6 @@ import 'dart:convert';
 import 'package:flutter_web3_provider/ethers.dart';
 import 'package:flutter_web3_provider/ethereum.dart';
 import 'package:http/http.dart' as http;
-//import 'package:flutter_ethers/flutter_ethers.dart' as ethers;
 
 String buildGetBlockEndpoint() {
   const startString =
