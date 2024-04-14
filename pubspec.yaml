@@ -18,7 +18,7 @@ dependencies:
   provider: ^6.1.2
   flutter_ethers: ^1.0.1
   web3dart: ^2.6.1
-
+  flutter_dotenv: ^5.1.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -7,11 +7,12 @@ import 'dart:convert';
 import 'package:flutter_web3_provider/ethers.dart';
 import 'package:flutter_web3_provider/ethereum.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-String buildGetBlockEndpoint() {
+String buildGetBlockEndpoint(String apiKey) {
   const startString =
       "https://api.etherscan.io/api?module=block&action=getblocknobytime&timestamp=";
-  const endString = "&closest=before&apikey=23MMB13RF76FJWX7D8621T4Z3K5S9EXVPV";
+  final endString = "&closest=before&apikey=$apiKey";
   DateTime now = DateTime.now();
   int millisecondsSinceEpoch = now.millisecondsSinceEpoch;
   double timestamp = (millisecondsSinceEpoch - 86400000) / 1000;
@@ -19,17 +20,19 @@ String buildGetBlockEndpoint() {
   return startString + floorTimestamp.toString() + endString;
 }
 
-String buildGetTransactionEndpoint(int block, String address) {
+String buildGetTransactionEndpoint(String apiKey, int block, String address) {
   final startString =
       "https://api.etherscan.io/api?module=account&action=txlist&address=$address&startblock=";
-  const endString =
-      "&endblock=99999999&page=1&offset=10&sort=asc&apikey=23MMB13RF76FJWX7D8621T4Z3K5S9EXVPV";
+  final endString =
+      "&endblock=99999999&page=1&offset=10&sort=asc&apikey=$apiKey";
 
   return startString + block.toString() + endString;
 }
 
 Future<int> fetchBlockByTimestamp() async {
-  final String apiUrl = buildGetBlockEndpoint();
+  await dotenv.load(fileName: ".env");
+  String apiKey = dotenv.get('ETHERSCAN_API_KEY');
+  final String apiUrl = buildGetBlockEndpoint(apiKey);
   final response = await http.get(Uri.parse(apiUrl));
   final jsonResponse = jsonDecode(response.body);
   BlockApiResponse blockApiResponse = BlockApiResponse.fromJson(jsonResponse);
@@ -39,7 +42,9 @@ Future<int> fetchBlockByTimestamp() async {
 
 Future<List<Transaction>> fetchTransactions(int block,
     {String address = "0xAF429255F21BC80104fcC0e0Fdb1Bf45b48f86Bd"}) async {
-  final endpoint = buildGetTransactionEndpoint(block, address);
+  await dotenv.load(fileName: ".env");
+  String apiKey = dotenv.get('ETHERSCAN_API_KEY');
+  final endpoint = buildGetTransactionEndpoint(apiKey, block, address);
   final response = await http.get(Uri.parse(endpoint));
   final jsonResponse = jsonDecode(response.body);
   TransactionsApiResponse transactionsApiResponse =
