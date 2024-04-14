@@ -8,6 +8,11 @@ After installing Flutter, add the bin folder to the environment variable "Path".
 
 With any terminal, navigate to the folder where you cloned this repository.
 
+In the assets folder, add a file calling it precisely ".env"
+
+Edit this file by adding:
+ETHERSCAN*API_KEY=/\_Your_Apikey*/.
+
 Run "flutter run".
 
-Connect your wallet and mint your NFT! 
+Connect your wallet and mint your NFT,if you have the right!
