@@ -1,16 +1,13 @@
-# b_mint_page
+# Flutter conditioned Mint Page
 
-A new Flutter project.
+A Flutter webpage to mint an NFT if you have completed a transaction on UniSwapRouterV2.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+After installing Flutter, add the bin folder to the environment variable "Path".
 
-A few resources to get you started if this is your first Flutter project:
+With any terminal, navigate to the folder where you cloned this repository.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Run "flutter run".
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Connect your wallet and mint your NFT! 
