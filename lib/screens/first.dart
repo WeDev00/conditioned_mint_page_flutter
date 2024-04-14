@@ -37,8 +37,9 @@ class _FirstState extends State<First> {
       body: Center(
         child: Scrollbar(
           controller: _scrollController,
-          child: const SingleChildScrollView(
-            child: SizedBox(
+          child: SingleChildScrollView(
+            controller: _scrollController,
+            child: const SizedBox(
               height: 700,
               width: 1290,
               child: Column(
