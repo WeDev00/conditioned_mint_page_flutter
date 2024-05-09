@@ -1,6 +1,6 @@
 # Flutter conditioned Mint Page
 
-A Flutter webpage to mint an NFT if you have completed a transaction on UniSwapRouterV2.
+A Flutter webpage to mint an NFT if you have completed a transaction on UniSwapRouterV2 during the past 24 hours.
 
 ## Getting Started
 
